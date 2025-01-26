@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "LaundryGothicBold";
+    src: local("LaundryGothicBold"),
+    url("./fonts//LaundryGothic_TTF/webfont/bold.woff")format("woff");
+    font-weight: normal;
+}
+
+body {
+    color: #f2f0ef;
+    font-family: "LaundryGothicBold";
+}
+
+@layer utilities {
+    .hover-sibling-transform:hover ~ .sibling-transform {
+      transform: translateX(25%);
+    }
+  }
+  

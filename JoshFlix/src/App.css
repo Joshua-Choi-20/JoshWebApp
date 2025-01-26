@@ -1,0 +1,26 @@
+/* .container {
+  display: flex;
+  margin-bottom:30px;
+} */
+
+.item {
+  background-size:cover;
+  /* flex: 0 0 19.7%; */
+  text-align: center;
+  /* margin: 0 2px;
+  border-radius:5px; */
+  transition: transform 300ms ease 100ms;
+}
+
+.container:hover .item {
+  transform: translateX(-20%);
+}
+
+.item:hover ~ .item {
+  transform: translateX(20%);
+}
+
+.item:hover {
+  transform: scale(1.5) !important;
+  overflow: hidden;
+}
