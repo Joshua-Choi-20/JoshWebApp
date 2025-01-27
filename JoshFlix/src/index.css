@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @font-face {
     font-family: "LaundryGothicBold";
     src: local("LaundryGothicBold"),
@@ -10,8 +12,11 @@
 }
 
 body {
+
     color: #f2f0ef;
     font-family: "LaundryGothicBold";
+    background-image: url('./src/assets/young_josh_1.PNG');
+    background-size: cover;
 }
 
 @layer utilities {
