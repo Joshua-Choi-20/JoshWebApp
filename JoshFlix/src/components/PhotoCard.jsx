@@ -1,10 +1,15 @@
 import { useState } from 'react';
 
+
 function PhotoCard({ text, image, carouselButton }) {
+    const [background, setBackground] = useState('white')
+    function changeBackground() {
+        setBackground(background => 'black')
+    }
     return (
         <>
-            <button onClick={carouselButton} className="col-span-1 item flex justify-center items-center bg-cover"
-                style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <button onClick={changeBackground} className="col-span-1 item flex justify-center items-center bg-cover"
+                style={{backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 {text}   
             </button>
         </>
@@ -14,16 +19,10 @@ function PhotoCard({ text, image, carouselButton }) {
 export default function Gallery() {
 
     function expandKim({}) {
-        
-        
+    
       }
     const photoData = [
-        { text: "Kim's Convenience", image: '/src/assets/college_josh.PNG', fun: expandKim},
-        { text: "Arcane", image: '/src/assets/store_josh.PNG', backgroundIndex: 1 },
-        { text: "Physical 100", image: '/src/assets/sunglass_josh.PNG', backgroundIndex: 2 },
-        { text: "Queen's Gambit", image: '/src/assets/birthday_josh.PNG', backgroundIndex: 3 },
-        { text: "Korea No.1", image: '/src/assets/beach_josh.PNG', backgroundIndex: 4 },
-        { text: "Music", image: '/src/assets/beach_josh.PNG', backgroundIndex: 5 }
+        { text: "Kim's Convenience", image: '/src/assets/college_josh.PNG', fun: expandKim}
     ];
 
     

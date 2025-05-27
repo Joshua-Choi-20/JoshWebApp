@@ -1,7 +1,38 @@
-import Gallery from "../components/PhotoCard.jsx"
+// import Gallery from "../components/PhotoCard.jsx"
+import { useState } from 'react';
 
-export function ResumeLinkedIn({ display }) {
-    return display ? (
+
+
+export function Gallery() {
+    const [bgColor, setBgColor] = useState('/src/assets/college_josh.PNG');
+    const handleColorChange = (color) => {
+        setBgColor('/src/assets/store_josh.PNG');
+    };
+
+    return (
+    <div className = 'bg-cover'  style={{ backgroundImage: `url(${bgColor})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <h2>Parent Component</h2>
+      {/* <Child onChangeColor={handleColorChange} /> */}
+    </div>
+  );
+}
+
+
+// function Child({ onChangeColor }) {
+//     return (
+//       <div>
+//         <h3>Child Component</h3>
+//         <button onClick={() => onChangeColor('lightblue')}>Blue</button>
+//         <button onClick={() => onChangeColor('lightgreen')}>Green</button>
+//         <button onClick={() => onChangeColor('lightcoral')}>Red</button>
+//       </div>
+//     );
+//   }
+
+
+
+export function ResumeLinkedIn() {
+    return (
         <div className="text-sm flex w-1/2 h-8 md:justify-start">
             <button className="w-1/2 h-full bg-yellow-400">
                 <a href='https://www.linkedin.com/in/joshua--choi/'>Resume</a>
@@ -10,9 +41,8 @@ export function ResumeLinkedIn({ display }) {
                 <a href='https://www.linkedin.com/in/joshua--choi/'>LinkedIn</a>
             </button>
         </div>
-    ) : null;
+    );
 }
-
 
 export function ContentText({ textTop, heading, subheading, bio }) {
     return (<>
@@ -25,10 +55,6 @@ export function ContentText({ textTop, heading, subheading, bio }) {
             ))}</h3>
     </>)
 
-}
-
-export function SideBar() {
-    return (<div class="w-1/12 h-screen "></div>)
 }
 
 
@@ -44,6 +70,13 @@ export function Content({ textTop, heading, subheading, bio, display }) {
     );
 }
 
+export function SideBar() {
+    return (<div class="w-1/12 h-screen "></div>)
+}
+
+
+
+
 
 export default function MainPage() {
     return (
@@ -53,8 +86,7 @@ export default function MainPage() {
                 textTop={'A 선용 Original'}
                 heading={'Joshua\'s Website'}
                 subheading={'#1 in Websites You Need to Visit'}
-                bio={'Software Engineer - First Generation Korean - Youngest of 4 \n I love games 🎲, calisthenics 🤸, malatang spice 🌶️, and live music 🎶 \nCheck out some of my favorite \"shows\" below!'}
-                display={true}
+                bio={'First Generation Korean\n I love nature 🎲, malatang spice 🌶️, and live music 🎶 \nCheck out some of my favorite \"shows\" below!'}
             />
         </div>
     )
