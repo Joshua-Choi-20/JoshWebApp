@@ -12,15 +12,7 @@
 }
 
 body {
-
     color: #f2f0ef;
     font-family: "LaundryGothicBold";
     background-size: cover;
 }
-
-@layer utilities {
-    .hover-sibling-transform:hover ~ .sibling-transform {
-      transform: translateX(25%);
-    }
-  }
-  

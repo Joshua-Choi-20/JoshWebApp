@@ -1,15 +1,14 @@
 import "../src/App.css";
 import MainPage from "./components/MainPage.jsx";
+import Carousel from "./components/Carousel.jsx";
 
 export default function App() {
   return (
-    <div className={`w-full h-full bg-cover transition-all duration-500 sm:bg-young-josh-mobile md:bg-young-josh`}>
-      {/* Horizontal Flex */}
-      <div className="flex items-center">
+    <div className="flex flex-col p-4 bg-black h-screen w-screen">
         {/* Sidebar */}
         <MainPage/>
+        <Carousel/>
         {/* Main Page */}
-      </div>
     </div>
   );
 }
