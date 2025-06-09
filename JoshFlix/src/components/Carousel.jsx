@@ -20,7 +20,7 @@ function Child({ onBackgroundChange }) {
         setbgImage(color);
     };
     return (
-    <div className = 'bg-cover w-5/6 ' style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className = 'h-full bg-cover' style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h2>Parent Component</h2>
       <Child onBackgroundChange={updateBgImage} />
     </div>
