@@ -1,16 +1,23 @@
 import "../src/App.css";
 import MainPage from "./components/MainPage.jsx";
-import Carousel from "./components/Carousel.jsx";
+import Modeling from "./components/Modeling.jsx";
 
 export default function App() {
   return (
-    <div className="flex flex-col px-4 bg-black h-screen w-screen ">
-     <div className="h-[62.5vh] pt-4 pb-2">
-        <MainPage/>
-    </div>
-    <div className="h-[37.5vh] pb-4 pt-2">
-        <Carousel/>
-    </div>
+    <div> 
+      <div className="h-screen w-screen bg-young-josh bg-cover">
+        <div className="h-full w-full bg-gradient-to-r from-black  bg-cover ">
+          <MainPage/>
+        </div>
+      </div>
+      
+      <div className="h-screen w-screen bg-young-josh bg-cover">
+        <div className ="h-full w-full bg-gradient-to-r from-black">
+          <Modeling/>
+        </div>
+       
+      </div>
+
     </div>
   );
 }

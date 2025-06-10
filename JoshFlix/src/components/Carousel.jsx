@@ -1,28 +1,32 @@
 
 import { useState } from 'react';
+import { imageData } from '../data/images';
 
 
-
-function Child({ onBackgroundChange }) {
+function Photocard({photo, text}) {
     return (
-      <div class = "outline outline-2 outline-blue-500 outline-dashed">
-        <h3> Child Component</h3>
-        <button className = 'bg-cover bg-beach-josh' onClick={() => onBackgroundChange('/src/assets/beach_josh.PNG')}>Blue</button>
-        <button className = 'bg-cover bg-birthday-josh' onClick={() => onBackgroundChange('/src/assets/birthday_josh.PNG')}>Green</button>
-        <button className = 'bg-cover bg-young-josh' onClick={() => onBackgroundChange('/src/assets/young_josh.PNG')}>Red</button>
+      <div class = "bg-cyan-50/10 h-full w-1/2 flex flex-col items-center rounded-2xl overflow-hidden">
+       
+        <h4 className='h-full w-full items-center flex justify-center  md:text-2xl'>
+          <img
+           className='h-1/2'
+            src = {photo}>
+          </img>{text}</h4>
       </div>
     );
   }
 
   export default function Carousel() {
-    const [bgImage, setbgImage] = useState('/src/assets/college_josh.PNG');
-    const updateBgImage = (color) => {
-        setbgImage(color);
-    };
     return (
-    <div className = 'h-full bg-cover' style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h2>Parent Component</h2>
-      <Child onBackgroundChange={updateBgImage} />
+    <div className='flex h-full w-1/3 space-x-3 justify-between'>
+      {imageData.map((image,index) => 
+        <Photocard
+        photo = {image.src}
+        text = {image.alt}
+        /> 
+        )}
+      {/* // <Photocard  */}
     </div>
   );
+ 
 }

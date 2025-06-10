@@ -1,22 +1,12 @@
-export function ResumeLinkedIn() {
-    return (
-        <div className="text-sm flex w-1/2 h-8 md:justify-start">
-            <button className="w-1/2 h-full bg-yellow-400">
-                <a href='https://www.linkedin.com/in/joshua--choi/'>Resume</a>
-            </button>
-            <button className="w-1/2 h-full bg-yellow-700">
-                <a href='https://www.linkedin.com/in/joshua--choi/'>LinkedIn</a>
-            </button>
-        </div>
-    );
-}
+
+import Carousel  from "./Carousel.jsx";
 
 export function ContentText({ textTop, heading, subheading, bio }) {
     return (<>
-        <p class="text-3x1 md:text-3xl ">{textTop}</p>
-        <h1 class="text-5x1 md:text-7xl font-extrabold">{heading}</h1>
-        <h2 className="text-xl md:text-2xl font-bold ">{subheading}</h2>
-        <h3 className="text-sm md:text-xl text-white">
+        <p class="text-3x1 md:text-6xl ">{textTop}</p>
+        <h1 class="text-5x1 md:text-9xl font-extrabold">{heading}</h1>
+        <h2 className="text-xl md:text-4xl font-bold ">{subheading}</h2>
+        <h3 className="text-sm md:text-4xl text-white">
         {bio.split('\n').map((line, index) => (
                 <p key={index}>{line}</p>
             ))}</h3>
@@ -27,9 +17,8 @@ export function ContentText({ textTop, heading, subheading, bio }) {
 
 export function Content({ textTop, heading, subheading, bio, display }) {
     return (
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-center space-y-4 text-center">
                 <ContentText textTop={textTop} heading={heading} subheading={subheading} bio={bio} />
-                <ResumeLinkedIn display={display} /> 
         </div>
     );
 }
@@ -38,16 +27,21 @@ export function Content({ textTop, heading, subheading, bio, display }) {
 
 export default function MainPage() {
     return (
-        <div className="bg-cover bg-young-josh h-full outline outline-red ">
-            <div className="pt-[12.5vh] h-full w-5/12 bg-gradient-to-r from-black ">
+        <div className="bg-cover w-full h-full flex flex-col bg-gradient-to-r from-black 
+        space-y-12">
+            <div className="pt-[12.5vh] h-5/8 flex flex-col">
                 <Content
-                className="outline outline-red"
                 textTop={'A 선용 Original'}
                 heading={'Josh\'s Website'}
-                subheading={'#1 in Websites You Need to Visit'}
-                bio={'I love nature 🎲, malatang spice 🌶️, and live music 🎶 \n Check out some of my favorite \"shows\" below!'}
+                subheading={'Design Engineer'}
+                bio={'I love nature 🎲, malatang spice 🌶️, and live music 🎶'}
                 />
             </div>
+
+            <div className = "h-1/8 flex justify-center">
+            <Carousel/>
+            </div>
+            
         </div>
     )
 }
